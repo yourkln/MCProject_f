@@ -3,14 +3,11 @@ import librosa
 import numpy as np
 import streamlit as st
 from transformers import AutoModelForAudioClassification, AutoFeatureExtractor
-import os
 
-# Model loading
 model_id = "yourkln/MCProject"
 model = AutoModelForAudioClassification.from_pretrained(model_id)
 feature_extractor = AutoFeatureExtractor.from_pretrained(model_id)
 
-# Label configuration
 id2label = model.config.id2label
 id2label = {int(k): v for k, v in id2label.items()}
 
@@ -45,7 +42,6 @@ def predict_audio_chunks(audio_path, chunk_duration=30):
 
     return predictions
 
-# Custom CSS with dark theme and green accents
 st.set_page_config(page_title="Music Genre Classification", layout="wide", initial_sidebar_state="collapsed")
 st.markdown("""
     <style>
@@ -132,10 +128,8 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# Main layout
-st.title("🎵 Genre Classification AI")
+st.title("🎵Music Genre Classification")
 
-# Introduction text
 st.markdown("""
     <div style='margin-bottom: 2rem;'>
         Transform your audio into genre insights using machine learning.
@@ -143,17 +137,14 @@ st.markdown("""
     </div>
 """, unsafe_allow_html=True)
 
-# File upload section
 st.markdown("### Upload Your Track")
 uploaded_file = st.file_uploader("", type=["mp3", "wav"])
 
 if uploaded_file is not None:
-    # Save uploaded file
     audio_path = "/tmp/uploaded_audio.wav"
     with open(audio_path, "wb") as f:
         f.write(uploaded_file.getbuffer())
-    
-    # Create two columns for audio player and analysis
+
     col1, col2 = st.columns([2, 3])
     
     with col1:
@@ -166,10 +157,7 @@ if uploaded_file is not None:
             with st.spinner('Processing audio...'):
                 predictions = predict_audio_chunks(audio_path)
                 
-                # Get majority prediction
                 majority_vote = max(set(predictions), key=predictions.count)
-                
-                # Display results
                 st.markdown(f"""
                     <div style='background-color: #1E1E1E; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #4CAF50;'>
                         <h3 style='margin: 0; color: #4CAF50;'>Primary Genre</h3>
@@ -177,7 +165,6 @@ if uploaded_file is not None:
                     </div>
                 """, unsafe_allow_html=True)
                 
-                # Show detailed analysis
                 with st.expander("View Detailed Analysis"):
                     st.markdown("#### 30-Second Segment Analysis")
                     for i, prediction in enumerate(predictions):
@@ -187,7 +174,6 @@ if uploaded_file is not None:
                             </div>
                         """, unsafe_allow_html=True)
 else:
-    # Placeholder when no file is uploaded
     st.markdown("""
         <div style='background-color: #1E1E1E; padding: 2rem; border-radius: 8px; text-align: center; margin-top: 2rem;'>
             <div style='color: #666666; font-size: 1.2rem;'>
