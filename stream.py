@@ -53,16 +53,16 @@ st.set_page_config(page_title="Audio Genre Classification", layout="centered", i
 st.markdown("""
     <style>
         body {
-            background-color: #2e2e2e;
+            background-color: #1a1a1a;
             color: white;
         }
         .stButton>button {
-            background-color: #004d2c;
+            background-color: #006400;
             color: white;
             border: none;
         }
         .stButton>button:hover {
-            background-color: #007f3a;
+            background-color: #004d2c;
         }
         .stTextInput>div>input {
             background-color: #333333;
@@ -110,7 +110,7 @@ if uploaded_file is not None:
         majority_vote = max(set(predictions), key=predictions.count)
         st.subheader(f"**Final Predicted Genre (Majority Voting):** {majority_vote}")
         
-        # Show "Show Detailed Predictions" button
+        # Show "Show Detailed Predictions" button and show details when clicked
         if st.button('Show Detailed Predictions'):
             st.write(f"Predictions for each 30s chunk:")
             for i, prediction in enumerate(predictions):
