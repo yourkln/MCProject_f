@@ -49,13 +49,6 @@ def predict_audio_chunks(audio_path, chunk_duration=30):
 st.set_page_config(page_title="Music Genre Classification", layout="wide", initial_sidebar_state="collapsed")
 st.markdown("""
     <style>
-        /* Hide Streamlit header and footer */
-        #MainMenu {visibility: hidden;}
-        header {visibility: hidden;}
-    </style>
-""", unsafe_allow_html=True)
-st.markdown("""
-    <style>
         /* Main page background and text */
         .stApp {
             background-color: #111111;
