@@ -130,7 +130,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Main layout
-st.title("🎵 Music Genre Classification")
+st.title("🎵 Genre Classification AI")
 
 # Introduction text
 st.markdown("""
@@ -197,6 +197,6 @@ else:
 st.markdown("""
     <div class='custom-divider'></div>
     <div style='text-align: center; color: #666666; padding: 1rem;'>
-        Yourkln
+        Powered by Machine Learning | Built with Streamlit
     </div>
 """, unsafe_allow_html=True)
