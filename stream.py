@@ -65,7 +65,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 st.markdown("""
     <style>
-        .st-emotion-cache-aoyl2m e1jram340{
+        .st-emotion-cache-aoyl2m{
             display: none;
         }
         /* Main page background and text */
