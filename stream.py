@@ -200,6 +200,6 @@ else:
 st.markdown("""
     <div class='custom-divider'></div>
     <div style='text-align: center; color: #666666; padding: 1rem;'>
-        Powered by Machine Learning | Built with Streamlit
+        Powered by Yourkln | Built with Love
     </div>
 """, unsafe_allow_html=True)
