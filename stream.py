@@ -4,8 +4,6 @@ import numpy as np
 import streamlit as st
 from transformers import AutoModelForAudioClassification, AutoFeatureExtractor
 import os
-import matplotlib.pyplot as plt
-import librosa.display
 
 # Charger le modèle et le feature extractor à partir de Hugging Face
 model_id = "yourkln/MCProject"  # Remplacez par le nom de votre modèle Hugging Face
@@ -51,9 +49,40 @@ def predict_audio_chunks(audio_path, chunk_duration=30):
     return predictions
 
 # Streamlit UI
-st.title("Advanced Audio Genre Classification with Hugging Face")
+st.set_page_config(page_title="Audio Genre Classification", layout="centered", initial_sidebar_state="collapsed")
+st.markdown("""
+    <style>
+        body {
+            background-color: #2e2e2e;
+            color: white;
+        }
+        .stButton>button {
+            background-color: #004d2c;
+            color: white;
+            border: none;
+        }
+        .stButton>button:hover {
+            background-color: #007f3a;
+        }
+        .stTextInput>div>input {
+            background-color: #333333;
+            color: white;
+        }
+        .stFileUploader>div>label {
+            color: #b3b3b3;
+        }
+        .stTextInput>label {
+            color: white;
+        }
+        .stAudio>audio {
+            background-color: #333;
+        }
+    </style>
+""", unsafe_allow_html=True)
+
+st.title("Audio Genre Classification with Hugging Face")
 st.write(
-    "Upload an audio file (MP3 or WAV), listen to it, and classify it into different genres in 30s chunks."
+    "Upload an audio file (MP3 or WAV), listen to it, and classify it into different genres in 30-second chunks."
 )
 
 # Upload Audio File
@@ -71,55 +100,18 @@ if uploaded_file is not None:
     # Listen to the uploaded audio file
     st.audio(uploaded_file, format='audio/wav')
 
-    # Optional: Show the waveform of the uploaded audio
-    st.subheader("Audio Waveform:")
-    audio_array, sr = librosa.load(audio_path, sr=feature_extractor.sampling_rate)
-    plt.figure(figsize=(10, 4))
-    librosa.display.waveshow(audio_array, sr=sr)
-    plt.title("Audio Waveform")
-    st.pyplot()
-
-    # Control to select chunk duration
-    chunk_duration = st.slider("Select chunk duration (in seconds):", min_value=10, max_value=60, value=30)
-
     # Button to trigger prediction
     if st.button('Predict Genre'):
         with st.spinner('Processing...'):
             # Make predictions on the uploaded audio file
-            predictions = predict_audio_chunks(audio_path, chunk_duration=chunk_duration)
+            predictions = predict_audio_chunks(audio_path)
         
-        # Display predictions for each 30s chunk
-        show_individual_predictions = st.checkbox("Show individual chunk predictions", value=False)
-        
-        if show_individual_predictions:
-            st.write(f"Predictions for each {chunk_duration}s chunk:")
-            for i, prediction in enumerate(predictions):
-                st.write(f"Chunk {i + 1}: {prediction}")
-        
-        # Majority voting for final genre prediction
+        # Display the majority voting prediction for the entire file
         majority_vote = max(set(predictions), key=predictions.count)
+        st.subheader(f"**Final Predicted Genre (Majority Voting):** {majority_vote}")
         
-        st.write(f"**Majority voted genre for the entire audio: {majority_vote}**")
-        
-        # Optional: Show bar chart of genre prediction distribution
-        st.subheader("Genre Distribution for Audio:")
-        genre_counts = {genre: predictions.count(genre) for genre in set(predictions)}
-        genres = list(genre_counts.keys())
-        counts = list(genre_counts.values())
-        
-        fig, ax = plt.subplots()
-        ax.bar(genres, counts)
-        ax.set_ylabel("Count")
-        ax.set_xlabel("Genres")
-        ax.set_title(f"Genre Distribution across {len(predictions)} Chunks")
-        st.pyplot(fig)
-        
-        # Show more detailed results
-        if st.button("Show Raw Results"):
-            st.write(f"Full predictions for each chunk:")
+        # Show "Show Detailed Predictions" button
+        if st.button('Show Detailed Predictions'):
+            st.write(f"Predictions for each 30s chunk:")
             for i, prediction in enumerate(predictions):
                 st.write(f"Chunk {i + 1}: {prediction}")
-
-# Final UI polish: Add footer and user interaction
-st.markdown("----")
-st.markdown("Made with ❤️ by yourkln. Powered by Hugging Face models.")
