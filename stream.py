@@ -52,7 +52,6 @@ st.markdown("""
         /* Hide Streamlit header and footer */
         #MainMenu {visibility: hidden;}
         header {visibility: hidden;}
-        footer {visibility: hidden;}
     </style>
 """, unsafe_allow_html=True)
 st.markdown("""
