@@ -65,6 +65,9 @@ st.markdown("""
 """, unsafe_allow_html=True)
 st.markdown("""
     <style>
+        .st-emotion-cache-aoyl2m e1jram340{
+            display: none;
+        }
         /* Main page background and text */
         .stApp {
             background-color: #111111;
