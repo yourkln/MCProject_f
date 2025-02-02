@@ -128,14 +128,13 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# st.title("Music Genre Classification")
+st.title("Upload any audio file and let our model analyze its musical characteristics.")
 
-st.markdown("""
-    <div style='margin-bottom: 2rem;'>
-        Transform your audio into genre insights using machine learning.
-        Upload any audio file and let our AI model analyze its musical characteristics.
-    </div>
-""", unsafe_allow_html=True)
+# st.markdown("""
+#     <div style='margin-bottom: 2rem;'>
+#         Upload any audio file and let our model analyze its musical characteristics.
+#     </div>
+# """, unsafe_allow_html=True)
 
 st.markdown("### Upload Your Track")
 uploaded_file = st.file_uploader("", type=["mp3", "wav"])
