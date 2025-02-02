@@ -79,7 +79,7 @@ st.markdown("""
         
         /* Buttons */
         .stButton > button {
-            background-color: #4CAF50 !important;
+            background-color: #3ddf70 !important;
             color: white !important;
             border: none !important;
             border-radius: 4px !important;
@@ -116,7 +116,7 @@ st.markdown("""
         
         /* Spinner */
         .stSpinner > div {
-            border-top-color: #4CAF50 !important;
+            border-top-color: #3ddf70 !important;
         }
         
         /* Custom divider */
@@ -169,8 +169,8 @@ if uploaded_file is not None:
                 
                 majority_vote = max(set(predictions), key=predictions.count)
                 st.markdown(f"""
-                    <div style='background-color: #1E1E1E; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #4CAF50;'>
-                        <h3 style='margin: 0; color: #4CAF50;'>Primary Genre</h3>
+                    <div style='background-color: #1E1E1E; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #3ddf70;'>
+                        <h3 style='margin: 0; color: #3ddf70;'>Primary Genre</h3>
                         <div style='font-size: 1.5rem; margin-top: 0.5rem;'>{majority_vote.title()}</div>
                     </div>
                 """, unsafe_allow_html=True)
