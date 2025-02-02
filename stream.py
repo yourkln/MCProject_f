@@ -128,7 +128,7 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-st.title("🎵Music Genre Classification")
+# st.title("Music Genre Classification")
 
 st.markdown("""
     <div style='margin-bottom: 2rem;'>
@@ -148,11 +148,11 @@ if uploaded_file is not None:
     col1, col2 = st.columns([2, 3])
     
     with col1:
-        st.markdown("### 🎧 Preview")
+        st.markdown("Preview")
         st.audio(uploaded_file, format='audio/wav')
     
     with col2:
-        st.markdown("### 🎯 Analysis")
+        st.markdown("Analysis")
         if st.button('Analyze Genre', key='analyze'):
             with st.spinner('Processing audio...'):
                 predictions = predict_audio_chunks(audio_path)
@@ -183,9 +183,9 @@ else:
     """, unsafe_allow_html=True)
 
 # Footer
-st.markdown("""
-    <div class='custom-divider'></div>
-    <div style='text-align: center; color: #666666; padding: 1rem;'>
-        Powered by Yourkln | Built with Love
-    </div>
-""", unsafe_allow_html=True)
+# st.markdown("""
+#     <div class='custom-divider'></div>
+#     <div style='text-align: center; color: #666666; padding: 1rem;'>
+#         Powered by Yourkln | Built with Love
+#     </div>
+# """, unsafe_allow_html=True)
