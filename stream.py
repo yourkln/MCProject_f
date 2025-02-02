@@ -125,11 +125,19 @@ st.markdown("""
             background-color: #333333;
             margin: 2rem 0;
         }
-        ._container_gzau3_1 _viewerBadge_nim44_23{
-            display: none !important;
-        }
+        
     </style>
 """, unsafe_allow_html=True)
+
+st.markdown(
+        r"""
+        <style>
+        .stAppDeployButton {
+                visibility: hidden;
+            }
+        </style>
+        """, unsafe_allow_html=True
+    )
 
 # st.title("Upload any audio file and let our model analyze its musical characteristics.")
 
