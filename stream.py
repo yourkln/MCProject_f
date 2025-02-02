@@ -128,7 +128,7 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-st.title("Upload any audio file and let our model analyze its musical characteristics.")
+# st.title("Upload any audio file and let our model analyze its musical characteristics.")
 
 # st.markdown("""
 #     <div style='margin-bottom: 2rem;'>
@@ -136,7 +136,7 @@ st.title("Upload any audio file and let our model analyze its musical characteri
 #     </div>
 # """, unsafe_allow_html=True)
 
-st.markdown("### Upload Your Track")
+st.markdown("Upload Your Track")
 uploaded_file = st.file_uploader("", type=["mp3", "wav"])
 
 if uploaded_file is not None:
