@@ -1,4 +1,4 @@
-![melspec](https://github.com/user-attachments/assets/e05394ad-2a8f-4408-aa1b-b6bcbdd7083f)# Music Genre Classification Project
+# Music Genre Classification Project
 
 ## Overview
 In this project, we undertook the challenge of music genre classification through a comprehensive approach that explored various methodologies, ranging from traditional machine learning to state-of-the-art deep learning models. Our work was structured into four main parts, each building upon the findings of the previous phase to develop an increasingly robust classification system.
