@@ -28,9 +28,10 @@ To create a more granular dataset, we implemented two parallel approaches. First
 ## Exploratory Data Analysis
 Following the feature extraction phase, we conducted a comprehensive exploratory data analysis (EDA) on the 30-second and the 3-second segments. This analysis provided valuable insights into the distribution and characteristics of our extracted features across different genres. While we maintained detailed internal documentation of our EDA findings, we chose to keep this section concise in our public documentation (README).
 
-![output](https://github.com/user-attachments/assets/16064baf-9a66-4638-a3ba-07f9c6f95630)
 
-![audio_wave](https://github.com/user-attachments/assets/df35566e-f184-4e03-8b66-24de43bddff3)
+![melspec](https://github.com/user-attachments/assets/01002311-a385-4e73-8702-f787b889bb6a)
+
+![audio_wave](https://github.com/user-attachments/assets/08d1f803-52c3-4fed-877e-5543fa9b7eef)
 
 
 ## Model Development
@@ -55,7 +56,7 @@ In our final approach, we explored the use of DistilHuBERT, a distilled version 
 This approach proved particularly successful, achieving slightly better generalization than our CNN model while dramatically reducing the model size to just 94MB - less than one-fifth of the CNN model's size. The significant reduction in model size, combined with maintained or improved performance, makes this our most promising approach for practical applications.
 
 ### Model Deployment and Interactive Interface
-To make our work accessible and practical for real-world use, we developed an interactive interface that showcases our genre classification system. The interface provides a simple and intuitive environment where users can upload audio files and receive genre predictions in real-time. We chose to deploy the DistilHuBERT model due to its optimal balance of performance and size, making it well-suited for deployment in resource-constrained environments.
+To make our work accessible and practical for real-world use, we developed an interactive interface that showcases our genre classification system. The interface provides a simple and intuitive environment where users can upload audio files and receive genre predictions in real-time. We chose to deploy the DistilHuBERT model to Hugging Face (Hf) due to its optimal balance of performance and size, making it well-suited for deployment in resource-constrained environments.
 
 The system handles audio processing and prediction generation, providing quick and accurate results. You can access and try our application at: [Music Genre Classification - Yourkln](https://yourkln.com/mcproject)
 
