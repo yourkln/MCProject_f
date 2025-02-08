@@ -4,12 +4,34 @@
 In this project, we undertook the challenge of music genre classification through a comprehensive approach that explored various methodologies, ranging from traditional machine learning to state-of-the-art deep learning models. Our work was structured into four main parts, each building upon the findings of the previous phase to develop an increasingly robust classification system.
 
 ## Data Processing & Feature Extraction
+
+**Dataset Description:**  
+
+- **Audio Files**: The dataset consists of **1,000 audio tracks**, each lasting **30 seconds**.  
+
+- **Genres**: There are **10 genres**, each represented by **100 tracks**:  
+  - Blues  
+  - Classical  
+  - Country  
+  - Disco  
+  - Hip Hop  
+  - Jazz  
+  - Metal  
+  - Pop  
+  - Reggae  
+  - Rock
+    
 Our initial work focused on generating rich representations of audio data from the GTZAN dataset, which provides 30-second audio samples. We implemented an extensive feature extraction process that captured both spectral and temporal characteristics of the audio signals. The primary features we extracted included mel-spectrograms and 20 MFCC coefficients. We enhanced our feature set with additional parameters including Chroma Features, Root Mean Square (RMS) Energy, Spectral Features, Zero Crossing Rate (ZCR), Harmonic and Perceptual Features, and Tempo.
 
 To create a more granular dataset, we implemented two parallel approaches. First, we processed the full 30-second audio segments, extracting all mentioned features. Additionally, we split each 30-second audio into ten 3-second chunks, applying the same feature extraction process to these shorter segments. This dual approach allowed us to investigate the impact of segment length on classification performance.
 
 ## Exploratory Data Analysis
-Following the feature extraction phase, we conducted a comprehensive exploratory data analysis (EDA) focusing on the 30-second segments. This analysis provided valuable insights into the distribution and characteristics of our extracted features across different genres. While we maintained detailed internal documentation of our EDA findings, we chose to keep this section concise in our public documentation as the subsequent modeling results speak to the effectiveness of our feature engineering approach.
+Following the feature extraction phase, we conducted a comprehensive exploratory data analysis (EDA) on the 30-second and the 3-second segments. This analysis provided valuable insights into the distribution and characteristics of our extracted features across different genres. While we maintained detailed internal documentation of our EDA findings, we chose to keep this section concise in our public documentation (README).
+
+![output](https://github.com/user-attachments/assets/16064baf-9a66-4638-a3ba-07f9c6f95630)
+
+![audio_wave](https://github.com/user-attachments/assets/df35566e-f184-4e03-8b66-24de43bddff3)
+
 
 ## Model Development
 
