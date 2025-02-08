@@ -56,7 +56,7 @@ In our final approach, we explored the use of DistilHuBERT, a distilled version 
 This approach proved particularly successful, achieving slightly better generalization than our CNN model while dramatically reducing the model size to just 94MB - less than one-fifth of the CNN model's size. The significant reduction in model size, combined with maintained or improved performance, makes this our most promising approach for practical applications.
 
 ### Model Deployment and Interactive Interface
-To make our work accessible and practical for real-world use, we developed an interactive interface that showcases our genre classification system. The interface provides a simple and intuitive environment where users can upload audio files and receive genre predictions in real-time. We chose to deploy the DistilHuBERT model due to its optimal balance of performance and size, making it well-suited for deployment in resource-constrained environments.
+To make our work accessible and practical for real-world use, we developed an interactive interface that showcases our genre classification system. The interface provides a simple and intuitive environment where users can upload audio files and receive genre predictions in real-time. We chose to deploy the DistilHuBERT model to Hugging Face (Hf) due to its optimal balance of performance and size, making it well-suited for deployment in resource-constrained environments.
 
 The system handles audio processing and prediction generation, providing quick and accurate results. You can access and try our application at: [Music Genre Classification - Yourkln](https://yourkln.com/mcproject)
 
