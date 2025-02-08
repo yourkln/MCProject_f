@@ -1,4 +1,4 @@
-# Music Genre Classification Project
+![melspec](https://github.com/user-attachments/assets/e05394ad-2a8f-4408-aa1b-b6bcbdd7083f)# Music Genre Classification Project
 
 ## Overview
 In this project, we undertook the challenge of music genre classification through a comprehensive approach that explored various methodologies, ranging from traditional machine learning to state-of-the-art deep learning models. Our work was structured into four main parts, each building upon the findings of the previous phase to develop an increasingly robust classification system.
@@ -28,9 +28,10 @@ To create a more granular dataset, we implemented two parallel approaches. First
 ## Exploratory Data Analysis
 Following the feature extraction phase, we conducted a comprehensive exploratory data analysis (EDA) on the 30-second and the 3-second segments. This analysis provided valuable insights into the distribution and characteristics of our extracted features across different genres. While we maintained detailed internal documentation of our EDA findings, we chose to keep this section concise in our public documentation (README).
 
-![output](https://github.com/user-attachments/assets/16064baf-9a66-4638-a3ba-07f9c6f95630)
 
-![audio_wave](https://github.com/user-attachments/assets/df35566e-f184-4e03-8b66-24de43bddff3)
+![melspec](https://github.com/user-attachments/assets/01002311-a385-4e73-8702-f787b889bb6a)
+
+![audio_wave](https://github.com/user-attachments/assets/08d1f803-52c3-4fed-877e-5543fa9b7eef)
 
 
 ## Model Development
